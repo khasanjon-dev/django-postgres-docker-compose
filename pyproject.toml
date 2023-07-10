@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "minio-security"
+version = "0.1.0"
+description = ""
+authors = ["Khasanjon Mamadaliyev <khasanjon.eng@gmail.com>"]
+readme = "README.md"
+packages = [{include = "minio_security"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.3"
+python-dotenv = "^1.0.0"
+djangorestframework = "^3.14.0"
+pillow = "^10.0.0"
+django-storages = "^1.13.2"
+boto3 = "^1.28.1"
+drf-yasg = "^1.21.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

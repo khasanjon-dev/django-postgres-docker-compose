@@ -60,11 +60,17 @@ WSGI_APPLICATION = 'root.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': os.getenv('SQL_HOST'),
+        'NAME': os.getenv('SQL_NAME'),
+        'USER': os.getenv('SQL_USER'),
+        'PASSWORD': os.getenv('SQL_PASSWORD'),
+        'PORT': os.getenv('SQL_PORT')
     }
 }
 
+print(os.getenv('SQL_HOST'))
+print(os.getenv('SQL_PORT'))
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',

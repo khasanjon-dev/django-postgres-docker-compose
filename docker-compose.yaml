@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: ./compose/django-compose/Dockerfile
-    container_name: backend_khasan
     image: image_backend_khasan
     restart: always
     command: /start
@@ -19,7 +18,14 @@ services:
       - .env
     depends_on:
       - db
-
+  nginx:
+    build:
+      context: .
+      dockerfile: compose/nginx/Dockerfile
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
 
   db:
     image: postgres:alpine
@@ -47,7 +53,7 @@ services:
     volumes:
       - minio_storage:/data
     command: server --address ":9006" --console-address ":9007" /data
-    restart: always # necessary since it's failing to start sometimes
+    restart: always
 
 
 volumes:

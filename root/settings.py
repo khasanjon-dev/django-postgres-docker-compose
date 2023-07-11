@@ -69,8 +69,6 @@ DATABASES = {
     }
 }
 
-print(os.getenv('SQL_HOST'))
-print(os.getenv('SQL_PORT'))
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -111,6 +109,6 @@ AWS_ACCESS_KEY_ID = MINIO_ACCESS_KEY
 AWS_SECRET_ACCESS_KEY = MINIO_SECRET_KEY
 AWS_STORAGE_BUCKET_NAME = MINIO_BUCKET_NAME
 AWS_S3_ENDPOINT_URL = MINIO_ENDPOINT
-AWS_DEFAULT_ACL = None
+
 AWS_QUERYSTRING_AUTH = True
-AWS_S3_FILE_OVERWRITE = False
+AWS_QUERYSTRING_EXPIRE = 15

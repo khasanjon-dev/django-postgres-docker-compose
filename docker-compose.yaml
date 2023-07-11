@@ -53,3 +53,5 @@ services:
 volumes:
   postgres_data:
   minio_storage:
+  static_volume:
+  media_volume:

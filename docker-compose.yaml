@@ -40,7 +40,7 @@ services:
     image: minio/minio
     ports:
       - "9006:9006"
-      - "9007:9007"
+      - "9077:9077"
     environment:
       MINIO_ROOT_USER: user
       MINIO_ROOT_PASSWORD: password
